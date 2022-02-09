@@ -1,12 +1,7 @@
-s = ''
-while True:
-    try:
-        cur = input()
-        s += cur
-    except:
-        break
+import sys
 
+s = sys.stdin.read()
 s = s.lower()
 for c in "abcdefghijklmnopqrstuvwxyz":
-    countable=s.count(c)
-    print('{} : {}'.format(c, countable))
+    cnt = s.count(c)
+    print(f'{c} : {cnt}')

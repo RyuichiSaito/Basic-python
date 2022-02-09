@@ -3,6 +3,6 @@ while True:
     if s == '0':
         break
     ans = 0
-    for i in range(len(s)):
-        ans += int(s[i])
+    for sd in s:
+        ans += int(sd)
     print(ans)
