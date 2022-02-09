@@ -1,0 +1,3 @@
+# Basic-python
+
+おべんきょう用
