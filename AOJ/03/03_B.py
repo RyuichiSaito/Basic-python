@@ -4,4 +4,4 @@ while True:
     if x == 0:
         break
     cnt += 1
-    print("Case {}: {}".format(cnt, x))
+    print(f"Case {cnt}: {x}")
