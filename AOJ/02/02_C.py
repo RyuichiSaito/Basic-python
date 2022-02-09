@@ -1,1 +1,3 @@
-print(*sorted(list(map(int, input().split()))))
+li = list(map(int, input().split()))
+li.sort()
+print(*li)
