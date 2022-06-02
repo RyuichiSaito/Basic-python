@@ -33,19 +33,26 @@ class Cube:
     def stasus(self):
         return [self.top, self.front, self.right, self.left, self.back, self.bottom]
 
+    def stasus_str(self):
+        return "".join(map(str, self.stasus()))
 
 def LI(): return list(map(int, input().split()))
 
-A = LI()
-B = LI()
+def cube_min(A):
+    cube_all = []
+    for com in ['', 'N', 'W', 'E', 'S', 'NN']:
+        cube = Cube(A)
+        cube.rotate(com)
+        for _ in range(4):
+            cube.rotate('NES')
+            A_cur = cube.stasus_str()
+            cube_all.append(A_cur)
+    return min(cube_all)
 
-for com in ['', 'N', 'W', 'E', 'S', 'NN']:
-    cube = Cube(A)
-    cube.rotate(com)
-    for _ in range(4):
-        cube.rotate('NES')
-        A_cur = cube.stasus()
-        if A_cur == B:
-            print("Yes")
-            exit()
-print("No")
+chk = []
+n = int(input())
+for _ in range(n):
+    A = LI()
+    chk.append(cube_min(A))
+
+print('Yes' if len(set(chk))==n else 'No')
